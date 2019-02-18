@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+    <title></title>
+</head>
+<body>
+    <div class="posts">
+
+
+        {% if current_user.is_authenticated %}
+        <li style=" color:black;"><a href="{{url_for('auth.logout')}}">Sign out</a></li>
+
+
+        <li style="color:black;">{{current_user.username}}</li>
+        {% else %}
+        <li style="color:black;"><a href="{{url_for('auth.login')}}">Sign in</a></li>
+
+        {%endif%}
