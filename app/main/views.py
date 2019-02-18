@@ -1,11 +1,12 @@
 from flask import render_template,request,redirect,url_for,abort
 from . import main
 from ..models import User,Blog,Comment, Subscriber
-from .. import db
+from .. import db,photos
 from .forms import UpdateProfile,BlogForm,CommentForm, SubscriberForm
 from flask_login import login_required,current_user
 import datetime
 from ..email import mail_message
+
 
 @main.route('/')
 def index():
@@ -100,7 +101,7 @@ def new_blog():
 
         subscriber = Subscriber.query.all()
         for email in subscriber:
-            mail_message("New Blog Post from BumbleBee! ","email/postnotification",email.email,subscriber=subscriber)
+            mail_message("New Blog Post from ReadPress ","email/postnotification",email.email,subscriber=subscriber)
         return redirect(url_for('main.index'))
 
     title = 'New Blog'
@@ -167,7 +168,7 @@ def subscriber():
         db.session.add(subscriber)
         db.session.commit()
 
-        mail_message("Welcome to BumbleBee","email/welcome_subscriber",subscriber.email,subscriber=subscriber)
+        mail_message("Welcome to ReadPress","email/welcome_subscriber",subscriber.email,subscriber=subscriber)
 
         title= "BumbleBee"
         return render_template('index.html',title=title, blogs=blogs)

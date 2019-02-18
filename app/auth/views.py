@@ -6,13 +6,6 @@ from .forms import LoginForm,RegistrationForm
 from .. import db
 from ..email import mail_message
 
-user = [
-    {
-        'email':'admin@blog.com',
-        'password':'admin098'
-    }
-]
-
 
 @auth.route('/login', methods = ['GET','POST'])
 def login():
