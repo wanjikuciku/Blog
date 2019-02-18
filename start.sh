@@ -1,3 +1,4 @@
-SECRET_KEY = os.environ.get('SECRET_KEY')
+SECRET_KEY = '12345'
+
 
 python3.6 manage.py server

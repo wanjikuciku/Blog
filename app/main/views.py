@@ -2,10 +2,10 @@ from flask import render_template,request,redirect,url_for,abort
 from . import main
 from ..models import User,Blog,Comment, Subscriber
 from .. import db
+from .forms import UpdateProfile,BlogForm,CommentForm, SubscriberForm
 from flask_login import login_required,current_user
 import datetime
-
-
+from ..email import mail_message
 
 @main.route('/')
 def index():
