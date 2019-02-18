@@ -1,3 +1,5 @@
+{% import 'macros.html' as macro%}
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -9,6 +11,21 @@
         {% endif %}
     </head>
     <body>
+        <!-- Popular blog section  -->
+        <h3> Popular Blog</h3>
+         <ul>
+            {{ macro.displayBlogList(popular)}}
+        </ul>
+        <!-- Upcoming blog  -->
+        <h3> Upcoming Blog </h3>
+         <ul>
+            {{ macro.displayBlogList(upcoming)}}
+        </ul>
+        <!-- Now showing blog -->
+        <h3>Now Showing</h3>
+         <ul>
+            {{ macro.displayBlogList(now_showing)}}
+        </ul>
 
     </body>
 </html>
