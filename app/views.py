@@ -1,6 +1,7 @@
 from flask import render_template
 from app import app
 from .request import get_blog
+from .request import get_blog,get_blog
 
 # Views
 @app.route('/')

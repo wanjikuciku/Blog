@@ -1,6 +1,3 @@
-from app import app
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
-if __name__ == '__main__':
-    app.run()
-    
 python3.6 manage.py server

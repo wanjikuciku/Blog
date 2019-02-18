@@ -4,8 +4,9 @@ class Config:
     '''
     General configuration parent class
     '''
-    BLOG_API_BASE_URL =http://quotes.stormconsultancy.co.uk/random.json 
-
+    BLOG_API_BASE_URL = 'http://quotes.stormconsultancy.co.uk/random.json'
+    SECRET_KEY = os.environ.get('SECRET_KEY')
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://lorna:milkshake@localhost/blog'
 
 
 class ProdConfig(Config):

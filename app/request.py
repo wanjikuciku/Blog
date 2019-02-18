@@ -50,3 +50,23 @@ def process_results(blog_list):
             blog_results.append(blog_object)
 
     return blog_results
+
+def get_blog(id):
+    get_blog_details_url = base_url.format(id)
+
+    with urllib.request.urlopen(get_blog_details_url) as url:
+        blog_details_data = url.read()
+        blog_details_response = json.loads(blog_details_data)
+
+        blog_object = None
+        if blog_details_response:
+            id = blog_details_response.get('id')
+            title = blog_details_response.get('original_title')
+            overview = blog_details_response.get('overview')
+            poster = blog_details_response.get('poster_path')
+            vote_average = blog_details_response.get('vote_average')
+            vote_count = blog_details_response.get('vote_count')
+
+            blog_object = Blog(id,title,overview,poster,vote_average,vote_count)
+
+    return blog_object
