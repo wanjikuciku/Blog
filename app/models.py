@@ -53,7 +53,7 @@ class Blog(db.Model):
     description = db.Column(db.String(), index=True, nullable=False)    
     date_posted = db.Column(db.String)
     owner_id = db.Column(db.Integer,db.ForeignKey("users.id"))
-    comments = db.relationship('Comment',backref =  'blog_id',lazy = "dynamic")
+    comments = db.relationship('Comment',backref =  'comment',lazy = "dynamic")
 
 
     def save_blog(self):
@@ -78,9 +78,9 @@ class Blog(db.Model):
 class Comment(db.Model):
     __tablename__ = 'comments'
     id = db.Column(db.Integer,primary_key = True)
-    comment = db.Column(db.String(1000))
+    description = db.Column(db.String(1000))
     name = db.Column(db.String)
-    blog = db.Column(db.Integer,db.ForeignKey("blogs.id"))
+    blog_id = db.Column(db.Integer,db.ForeignKey("blogs.id"))
     user_id = db.Column(db.Integer,db.ForeignKey("users.id"))
 
     def save_comment(self):
@@ -88,8 +88,8 @@ class Comment(db.Model):
         db.session.commit()
 
     @classmethod
-    def get_comments(cls,blog):
-        comments = Comment.query.filter_by(blog_id = blog).all()
+    def get_comments(cls,blog_id):
+        comments = Comment.query.filter_by(blog_id = blog_id).all()
         return comments
 
     @classmethod
