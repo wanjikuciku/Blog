@@ -40,7 +40,7 @@ To start using this project use the following commands:
 ## Prerequisites
 You need the following to work on the project: -Python version 3.6 -Flask -Pip -virtualenv -A text Editor
 
-## Link to Live Website https://lona-press.herokuapp.com
+## Link to Live Website https://lony-press.herokuapp.com/
 
 ## Known Bugs
 None known at the moment.
