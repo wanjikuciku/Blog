@@ -42,6 +42,11 @@ You need the following to work on the project: -Python version 3.6 -Flask -Pip -
 
 ## Link to Live Website https://git.heroku.com/lony-blog.git
 
+## Known Bugs
+None known at the moment.
+
+
+
 ## Technologies Used
 * Python
 * HTML
