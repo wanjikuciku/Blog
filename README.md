@@ -28,10 +28,19 @@ To start using this project use the following commands:
 
 * access the application on this localhost address http://127.0.0.1:5000
 
+## Behaviour Driven Development
+|  Behaviour |  Input  |  Output |
+|------------|---------|---------|
+| Home | - | - |
+|Click on login button | fill credentials | blogs |
+|view blogs | click on view | All posts are displayed starting with the most recent|
+|Delete Blog| Click on Delete | Post is deleted|
+|Write Blogs | Click on New Blog |	A form for a new blog is displayed|
+
 ## Prerequisites
 You need the following to work on the project: -Python version 3.6 -Flask -Pip -virtualenv -A text Editor
 
-## Link to Live Website 
+## Link to Live Website https://git.heroku.com/lony-blog.git
 
 ## Technologies Used
 * Python
