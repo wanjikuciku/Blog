@@ -1,5 +1,5 @@
 # ReadPress
-This is a website that allows users to post pitches, vote on them and comment on them 19th february 2019
+This is a website that allows users to post blogs and comment on them 19th february 2019
 ### By Lorna wanjiku
 
 ## Description
@@ -15,7 +15,7 @@ Writers can create new blog posts
 To start using this project use the following commands:
 
 * git clone https://github.com/wanjikuciku/blog.git
-* cd Pitch
+* cd Blog
 * atom .
 * code . (this is if Visual Studio Code is your preferred text editor)
 
