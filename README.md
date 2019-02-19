@@ -45,13 +45,11 @@ You need the following to work on the project: -Python version 3.6 -Flask -Pip -
 ## Known Bugs
 None known at the moment.
 
-
-
 ## Technologies Used
 * Python
 * HTML
 * Flask micro-framework
-* Bootstrap
+* Bootstrap(used for styling)
 
 ## License
 MIT License
