@@ -1,8 +1,8 @@
 from . import db
 from werkzeug.security import generate_password_hash,check_password_hash
 from flask_login import UserMixin
-from datetime import datetime
 from . import login_manager
+from datetime import datetime
 
 @login_manager.user_loader
 def load_user(user_id):
@@ -49,11 +49,10 @@ class Role(db.Model):
 class Blog(db.Model):
     __tablename__ = 'blogs'
     id = db.Column(db.Integer,primary_key = True)
-    blog_title = db.Column(db.String)
-    blog_content = db.Column(db.String(1000))
-    category = db.Column(db.String(), nullable = False)
-    posted = db.Column(db.DateTime,default=datetime.utcnow)
-    user_id = db.Column(db.Integer,db.ForeignKey("users.id"))
+    title = db.Column(db.String)
+    description = db.Column(db.String(), index=True, nullable=False)    
+    date_posted = db.Column(db.String)
+    owner_id = db.Column(db.Integer,db.ForeignKey("users.id"))
     comments = db.relationship('Comment',backref =  'blog_id',lazy = "dynamic")
 
 
@@ -62,8 +61,8 @@ class Blog(db.Model):
         db.session.commit()
 
     @classmethod
-    def get_blogs(cls,category):
-        blogs = Blog.query.filter_by(category = category).all()
+    def get_blogs(cls,id):
+        blogs = Blog.query.filter_by(blog_id=id).desc().all()
         return blogs
 
     @classmethod
@@ -73,7 +72,7 @@ class Blog(db.Model):
         return blog
 
     def __repr__(self):
-        return f'Blog {self.blog_title}, {self.category}'
+        return f'Blog {self.description}'
 
 
 class Comment(db.Model):

@@ -8,6 +8,10 @@ class AddAuthor(FlaskForm):
 
 class BlogForm(FlaskForm):
     title = StringField('Title', validators = [Required()])
-    blog = StringField('Add a blog',validators = [Required()])
+    description = TextAreaField('description',validators = [Required()])
     submit = SubmitField('Submit')
+
+
+
+
 
