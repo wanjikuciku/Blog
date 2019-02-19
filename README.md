@@ -44,6 +44,7 @@ You need the following to work on the project: -Python version 3.6 -Flask -Pip -
 
 ## Technologies Used
 * Python
+* HTML
 * Flask micro-framework
 * Bootstrap
 
